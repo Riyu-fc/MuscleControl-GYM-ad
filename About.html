@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MuscleControlGym</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=
+Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+
+<script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+<body>
+<section class ="subheaderAbout">
+    <nav>
+        <a href="index.html"><img src="GYMs/logoclose.png"></a>
+        <div class=" nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+             <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li class="active"><a href="About.html">ABOUT</a></li>
+                <li><a href="Membership.html">MEMBERSHIP</a></li>
+                <li><a href="Contact.html">CONTACT</a></li>
+             </ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>ABOUT US</h1>
+
+
+
+    
+</section>
+
+<!----about us contents---->
+
+<section class="AboutUs">
+    <div class="row">
+        <div class="about-col">
+            <h1>
+                Welcome to MuscleControl Gym, where fitness meets community! 
+                We are a small gym dedicated to empowering individuals to achieve their health and fitness goals.
+            </h1>
+            <p>
+               At MuscleControl Gym, we believe that everyone deserves 
+                access to a supportive environment that fosters growth, strength, and confidence. Our state-of-the-art facilities 
+                are equipped with top-quality gym equipment, and our knowledgeable trainers are here to provide personalized guidance, 
+                whether you're a beginner or an experienced athlete.
+                <br>
+                We offer a variety of group classes, personal training sessions, and nutrition counseling 
+                tailored to your unique needs. Our goal is to create a welcoming atmosphere where you can challenge 
+                yourself, make lasting friendships, and transform your fitness journey.
+                <br>
+                Join us at MuscleControl Gym, and discover a place where you can control your strength, sculpt your 
+                physique, and unleash your full potential. Together, let's build a healthier, happier you!
+            </p>
+        </div>
+        <div class="about-col">
+            <img src="GYMs/about1.jpg" >
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!---FOOTER-->
+
+<section class="footer">
+    <h4>
+        ABOUT US
+    </h4>
+    <p>
+        Per quietum iter per nebula, luminary 
+        admiratus est cascade stellarum,
+        unaquaeque resonans <br>harmoniam quasi ad summum 
+        pervenientes suae cosmicum aventurae
+    </p>
+
+
+</section>
+<section>
+    <div class="icons">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-x-twitter"></i>        
+        <i class="fa-brands fa-instagram"></i>
+
+
+</section>
+
+
+<!-----JavaScript----->
+
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '20px',
+        duration: 1500,
+        delay: 300
+    });
+
+    ScrollReveal().reveal('.subheaderAbout img', {
+        reset: true,   
+        opacity: 0,     
+        distance: '0px'
+    });
+
+//---------about Page--------//
+
+    ScrollReveal().reveal('.nav-links',{delay: 50, origin: 'top'});
+    ScrollReveal().reveal('.subheaderAbout h1',{delay: 50, origin: 'left'});
+
+    ScrollReveal().reveal('.AboutUs h1',{delay: 50, origin: 'left'});
+    ScrollReveal().reveal('.AboutUs p',{delay: 50, origin: 'bottom'});
+    ScrollReveal().reveal('.AboutUs img',{delay: 50, origin: 'right'});
+
+
+//---------FOOTER--------------//
+ScrollReveal().reveal('.footer',{delay: 50, origin: 'bottom'});
+    ScrollReveal().reveal('.icons',{delay: 50, origin: 'right'});
+    </script>
+
+</body>
+</html>

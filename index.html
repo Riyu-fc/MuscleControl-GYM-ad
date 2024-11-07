@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MuscleControlGym</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=
+Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font
+-awesome/6.6.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+
+<link rel ="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+<body>
+
+    
+    <nav>
+        <a href="#homee"><img src="GYMs/LogoName.png"></a>
+        <div class=" nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+             <ul>
+                <li class="active"><a href="#homee">HOME</a></li>
+                <li><a href="#AboutUs">ABOUT US</a></li>
+                <li><a href="#subscription">SUBSCRIPTION</a></li>
+                <li><a href="#ContactUs">CONTACT</a></li>
+                <li><a href="#feed">TESTIMONIALS</a></li>
+                <li><a href="#APK">DOWNLOAD APP</a></li>
+             </ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+
+    <script src="script.js"></script>
+
+    <script type ="text/javascript">
+        window.addEventListener("scroll", function(){
+            var nav = document.querySelector("nav");
+            nav.classList.toggle("sticky", window.scrollY > 200);})
+
+
+
+    </script>
+
+
+
+
+<section class="carousel" id="homee">
+
+    <img class="pic-slide active" src="GYMs/Pic1.jpg" />
+    <img class="pic-slide" src="GYMs/Pic2.png" />
+    <img class="pic-slide" src="GYMs/Pic3.jpg" />
+    <img class="pic-slide" src="GYMs/Pic4.jpg" />
+    <img class="pic-slide" src="GYMs/Pic5.png" />
+
+    <div class="TextBox active">
+        <h1>START YOUR FITNESS JOURNEY</h1>
+        <p> Every step you take and every effort you make not only brings you closer to 
+            your goals but also builds your strength, resilience, and confidence. <br>
+        Embrace the journey, and you'll transform into the best version of yourself.</p>
+    </div>
+
+    <div class="TextBox">
+        <h1>APPLICATION</h1>
+        <p>Unlock your fitness journey with the MuscleControl App! 
+            Say goodbye to long check-ins—simply log in with ease 
+            and access exclusive video tutorials right at your fingertips. 
+
+    </div>
+    
+    <div class="TextBox">
+        <h1>OBJECTIVES</h1>
+        <p>At MuscleControl Gym, we empower fitness through community 
+            support, modern facilities, and educational resources for a healthier lifestyle.</p>
+    </div>
+    
+    <div class="TextBox">
+        <h1>JOIN OUR COMMUNITY</h1>
+        <p>At MuscleControl Gym, you’re not just a member; you’re part of a vibrant community. 
+        </p>
+    </div>
+    
+    <div class="TextBox">
+        <h1>LOCATION</h1>
+        <p>Currently located at No. 22, Divimall, GBRDI Building, Parking Lot, Cabuyao, 4025 Laguna. 
+            Join us on your journey to fitness and wellness!</p>
+    </div>
+
+    <!----------- Slider navigation buttons ----------------->
+    <div class="slider-nav">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        
+        <div class="nav-btn"></div>
+    </div>
+    
+</section>
+
+
+
+<!-----JAVASCRIPT FOR NAV BUTTONS----->
+<script type="text/javascript">
+
+const btns = document.querySelectorAll(".nav-btn");
+const slides = document.querySelectorAll(".pic-slide");
+const content = document.querySelectorAll(".TextBox");
+
+let currentSlide = 0;
+const slideInterval = 4000; 
+let autoSlideInterval;
+
+
+const sliderNav = function (manual) {
+    btns.forEach((btn) => btn.classList.remove("active"));
+    slides.forEach((slide) => slide.classList.remove("active"));
+    content.forEach((textBox) => textBox.classList.remove("active"));
+
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+    content[manual].classList.add("active");
+
+    currentSlide = manual; 
+    resetAutoSlide(); 
+};
+
+
+const autoSlide = function () {
+    currentSlide = (currentSlide + 1) % slides.length; 
+    sliderNav(currentSlide);
+};
+
+
+const resetAutoSlide = function () {
+    clearInterval(autoSlideInterval); 
+    autoSlideInterval = setInterval(autoSlide, slideInterval); 
+};
+
+
+resetAutoSlide();
+
+
+btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+        sliderNav(i);
+    });
+});
+
+
+let startX;
+let endX;
+
+const touchStart = (event) => {
+    startX = event.touches[0].clientX; 
+};
+
+const touchEnd = (event) => {
+    endX = event.changedTouches[0].clientX; 
+    handleSwipe();
+};
+
+const handleSwipe = () => {
+    if (startX > endX + 50) { 
+        currentSlide = (currentSlide + 1) % slides.length; 
+    } else if (startX < endX - 50) { 
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length; 
+    }
+    sliderNav(currentSlide);
+};
+
+
+document.querySelector('.carousel').addEventListener('touchstart', touchStart);
+document.querySelector('.carousel').addEventListener('touchend', touchEnd);
+
+</script>
+    
+
+
+<!---------ABOUT US----------->
+<section class ="subheaderAbout" id="AboutUs">
+    <h1>ABOUT US</h1>
+</section>
+
+
+
+<section class="AboutUs" >
+    <div class="row">
+        <div class="about-col">
+            <h1>
+                Welcome to MuscleControl Gym, where fitness meets community! 
+                We are a small gym dedicated to empowering individuals to achieve their health and fitness goals.
+            </h1>
+            <p>
+                MuscleControl Gym was founded by Reylyn Infante and Joey Pasco, a couple who share a passion for weightlifting and fitness. What started as a shared hobby turned into a vision for a business that could inspire and help others reach their fitness goals. Reylyn and Joey both had successful careers but often felt that their true passion lay in fitness and the empowering feeling that comes from strength training. They spent countless hours at the gym, not just working out but constantly learning about effective techniques, muscle-building strategies, and the benefits of a balanced and healthy lifestyle.
+
+                <br><br>In November of last year, Reylyn and Joey decided to turn their shared passion into something more meaningful. They had a dream of creating a place where anyone, regardless of fitness level, could feel comfortable and begin their fitness journey. MuscleControl Gym was envisioned as more than just a workout facility. They wanted it to be a place that would bring together people from all walks of life, fostering a community that valued hard work, consistency, and the joy that comes from self-improvement.
+                
+                <br><br>They began their journey with a humble space but poured their heart and soul into building it. Reylyn and Joey personally designed every corner, selected every piece of equipment, and ensured that MuscleControl Gym was a place where people could train without judgment and find encouragement from others around them. Today, MuscleControl Gym has already become a special part of the community. Reylyn and Joey continue to work hard to make it a place that reflects their journey, where everyone can feel empowered to pursue their fitness dreams.
+                
+                <br><br>Join us at MuscleControl Gym, and discover a place where you can control your strength, sculpt your physique, and unleash your full potential. Together, let's build a healthier, happier you!</p>
+                
+            </div>
+            <div class="about-col">
+            <img src="pics/owner.jpg" >
+            </div>
+
+            
+
+    </div>
+
+</section>
+
+
+<!------FACILITIES----->
+<section class="facilities">
+    <h1>FACILITIES</h1>
+    <p>Elevate your fitness with top-quality gym equipment and state-of-the-art facilities—where excellence meets your workout!</p>
+</section>
+
+<div class="container swiper">
+    <div class="card-wrapper">
+        <ul class="card-list swiper-wrapper">
+            <li class="card-item swiper-slide">
+                <div class="card-link">
+                    <img src="GYMs/BENCH (3).jpg" class="card-image">
+                    <p class="badge bench">BENCH</p>
+                    <h2 class="card-title"> Our selection of weight machines offers a comprehensive range of exercises to target every muscle group. Designed for safety and ease of use, these machines are perfect for beginners learning proper form and for experienced athletes seeking to enhance their workouts.
+                    </h2>
+                    
+                </div>
+            </li>
+
+            <li class="card-item swiper-slide">
+                <div class="card-link">
+                    <img src="GYMs/machine (2).jpg" alt="Card Image" class="card-image">
+                    <p class="badge machine">MACHINE</p>
+                    <h2 class="card-title"> Our selection of weight machines offers a comprehensive range of exercises to target every muscle group. Designed for safety and ease of use, these machines are perfect for beginners learning proper form and for experienced athletes seeking to enhance their workouts.
+                    </h2>
+                    
+                </div>
+            </li>
+
+            <li class="card-item swiper-slide">
+                <div class="card-link">
+                    <img src="GYMs/weights (3).jpg" alt="Card Image" class="card-image">
+                    <p class="badge weights">WEIGHTS</p>
+                    <h2 class="card-title"> Our extensive collection of free weights includes a variety of sizes and styles to accommodate all fitness levels. Whether you're just starting your strength training journey or looking to add more resistance to your routine, our weights are essential for building muscle and increasing overall strength.
+                    </h2>
+                    
+                </div>
+            </li>
+
+            <li class="card-item swiper-slide">
+                <div class="card-link">
+                    <img src="GYMs/cardio (1).jpg" alt="Card Image" class="card-image">
+                    <p class="badge cardio">CARDIO MACHINES</p>
+                    <h2 class="card-title"> Our range of cardiovascular machines, including treadmills and stationary bikes, is designed to boost your endurance and cardiovascular health. Ideal for users of all fitness levels, these machines offer a low-impact workout option to help you burn calories and improve your overall fitness.                    </h2>
+                    
+                </div>
+            </li>
+
+            <li class="card-item swiper-slide">
+                <div class="card-link">
+                    <img src="GYMs/equipment.png" alt="Card Image" class="card-image">
+                    <p class="badge equipments" >EQUIPMENTS</p>
+                    <h2 class="card-title"> Our fitness equipment selection encompasses everything from resistance bands to kettlebells, providing versatile options for your workout routine. Perfect for home or gym use, our equipment is designed to help you reach your fitness goals while keeping your workouts engaging and effective.
+                    </h2>
+                    
+                </div>
+            </li>
+        </ul>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-slide-button swiper-button-prev"></div>
+        <div class="swiper-slide-button swiper-button-next"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="Trialscript.js"></script>
+
+
+
+
+<!------Subscription Offers----------->
+
+<section class ="subheaderMembership" id="subscription">
+    <h1>SUBSCRIPTION</h1>
+</section>
+
+
+
+<!--------RATES------------>
+
+
+<section class="Rates">
+    <div class="container">
+        <header>
+            <h1>RATES</h1>
+            <p>
+                Unlock unlimited access to top-notch facilities and personalized training 
+                with our exclusive subscriptions. Achieve your fitness goals and enjoy a healthier,
+                stronger you!
+            </p>
+        </header>
+        <div class="pricing-section">
+
+            <div class="rates-col">
+                <div class="top-section">
+                    <h2>1-Day Trial</h2>
+                    <p class="price">P 100</p>
+                </div>
+                <div class="bottom-section">
+                    <ul>
+                        <li>P 20 student discount.</li>
+                        <li>Unlimited weight lifting equipment access.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rates-col">
+                <div class="top-section">
+                    <h2>1 Month</h2>
+                    <p class="price">P 800</p>
+                </div>
+                <div class="bottom-section">
+                    <ul>
+                        <li>P 100 student discount.</li>
+                        <li>Free consultation from instructors.</li>
+                        <li>Gain full access to the MuscleControl app.</li>
+                        <li>Unlimited gym equipment access.</li>
+                        <li>Unlimited drinking water.</li>
+                        <li>2 days free gym instructor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rates-col">
+                <div class="top-section">
+                    <h2>3 Months</h2>
+                    <p class="price">P 2,200</p>
+                </div>
+                <div class="bottom-section">
+                    <ul>
+                        <li>P 200 student discount.</li>
+                        <li>Free consultation from instructors.</li>
+                        <li>Gain full access to the MuscleControl app.</li>
+                        <li>Unlimited gym equipment access.</li>
+                        <li>Unlimited drinking water.</li>
+                        <li>5 days free gym instructor.</li>
+                        <li>3 days free boxing session.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rates-col">
+                <div class="top-section">
+                    <h2>6 Months</h2>
+                    <p class="price">P 4,400</p>
+                </div>
+                <div class="bottom-section">
+                    <ul>
+                        <li>P 400 student discount.</li>
+                        <li>Free consultation from instructors.</li>
+                        <li>Gain full access to the MuscleControl app.</li>
+                        <li>Unlimited gym equipment access.</li>
+                        <li>Unlimited drinking water.</li>
+                        <li>1 week free gym instructor.</li>
+                        <li>5 days free boxing session.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rates-col">
+                <div class="top-section">
+                    <h2>12 Months</h2>
+                    <p class="price">P 9,000</p>
+                </div>
+                <div class="bottom-section">
+                    <ul>
+                        <li>P 600 student discount.</li>
+                        <li>Free consultation from instructors.</li>
+                        <li>Gain full access to the MuscleControl app.</li>
+                        <li>Unlimited gym equipment access.</li>
+                        <li>Unlimited drinking water.</li>
+                        <li>3 weeks free gym instructor.</li>
+                        <li>10 days free boxing session.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!---<section class = "offers" >
+    <p>
+        Unlock unlimited access to top-notch facilities and personalized training 
+        with our exclusive membership. Achieve your fitness goals and enjoy a healthier,
+        stronger you!
+    </p>
+
+    <div class="row">
+        <div class="offers-col">
+            <h3>TRIALS</h3>
+            <p>This is a trial offer to let potential members experience 
+                the service before committing.</p>
+        </div>
+        <div class="offers-col">
+            <h3>FREE COACHING</h3>
+            <p> Enjoy two days of complimentary coaching as a welcome 
+                bonus to help new members get started.</p>
+        </div>
+        <div class="offers-col">
+            <h3>CONSULTATION</h3>
+            <p> This is a consultation offer allows beginners to get 
+                personalized guidance on fitness goals and nutrition.</p>
+        </div>
+    </div>
+</section>
+--->
+
+
+
+
+<!--------COACH------------>
+<section class="Coach">
+    <h1> COACHING STAFF</h1>
+    <p class="description">Get fit with a personal coach! Expert guidance, 
+        custom workout plans, and motivation to reach your 
+        goals safely and effectively. Start your journey today!
+    </p>
+
+
+    <div class="row">
+        <div class="Coach-col">
+            <img src="GYMs/1.png">
+            <div class="layer">
+                <h3>Coach Jaeson</h3>
+                
+                <h4>Fitness Coach</h4>
+                <p>Focuses on HIIT and Cardiovascular Excercise.</p>
+                <h5>Achievements:</h5>
+                <h6>
+                    • 500 Meditation Classes <br>
+                    • National Bodybuilding Champion<br>
+                    • 10K HIIT Routine Downloads<br>
+                    • Top-Ranked Strength Coach<br>
+                    • Innovator of HIIT<br>
+                    • Elite Fitness Program Developer<br>
+                    • Award for Best Coaching Techniques<br>
+                    • Trainer of 1,000+ Successful Clients<br>
+                    • Expert in Strength and Conditioning<br>
+                    • Top Client Satisfaction Rating
+                </h6>
+                
+            </div>
+        </div>
+
+
+        <div class="Coach-col">
+            <img src="GYMs/2.png">
+            <div class="layer">
+                <h3>Coach Mara</h3>
+          
+                <h4>Yoga Instructor</h4>
+                <p>Expert in yoga and mindfulness practices.</p>
+                <h5 class="achievements-title">Achievements:</h5>
+                <h6>
+                    • 200 Yoga Workshops <br>
+                    • Fitness Motivator <br>
+                    • Top 10 Triathlete <br>
+                    • Yoga Certification Specialist <br>
+                    • Most Creative Stretching Routine <br>
+                    • Best Group Fitness Instructor <br>
+                    • 100 Fat Loss Transformations <br>
+                    • Champion in Flexibility Competitions <br>
+                    • Yoga Retreat Leader <br>
+                    • Mindfulness Techniques
+
+                </h6>
+                
+                
+            </div>
+        </div>
+
+        <div class="Coach-col">
+            <img src="GYMs/3.png">
+            <div class="layer">
+                <h3>Coach Yuri</h3>
+                
+                <h4>Senior Trainer</h4>
+                <p>Specializes in Strength Training & Conditioning.</p>
+                <h5>Achievements:</h5>
+                <h6>
+                    • 500-Day Strength Streak <br>
+                    • Cardio King: 100 Marathon Clients <br>
+                    • 500 lbs Deadlift Record <br>
+                    • Top Trainer Award: 1,000+ Clients <br>
+                    • High-Intensity Workout Innovator <br>
+                    • Best Gym Performance Coach <br>
+                    • Strength Training Certification Leader <br>
+                    • Ultimate Powerlifting Winner <br>
+                    • Expert in Muscle Gain Programs <br>
+                    • Top Client Satisfaction Rating
+                </h6>
+                
+                
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+<!--------------CONTACT--------------->
+
+<section class ="subheaderContact" id="ContactUs">
+    <h1>Contact Us</h1>
+
+
+</section>
+<section class="location" >
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.
+    179717460374!2d121.1313537146782!3d14.24273622594624!2m3!1f0!2f0!3f0!3m2!
+    1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd63e34532f225%3A0x7f95f9114a0c2a93!2s
+    MuscleControl%20Gym!5e0!3m2!1sen!2sph!4v1725344913246!5m2!1sen!2sph" 
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+<div class="ContactUs" >
+    <div class="row">
+        <div class="contact-col">
+            <div>
+                <i class="fa-solid fa-house"></i>
+                <span>
+                    <h5>
+                        No. 22, Divimall, GBRDI Building,
+                         Cabuyao, Laguna
+                    </h5>
+                </span>
+            </div>
+            <div>
+                <i class="fa-solid fa-phone"></i>
+                <span>
+                    <h5>
+                        (+63) 9493989748
+                    </h5>
+                </span>
+            </div>
+            <div>
+                <i class="fa-solid fa-envelope"></i>
+                <span>
+                    <h5>
+                        musclecontrolgym@gmail.com
+                    </h5>
+                </span>
+            </div>
+        </div>        
+    </div>
+    <!---<div class="contact-col">
+            <form action="Form-Handler.php" methos="post" id="email">
+                <input type="email" name="email"placeholder="Enter Your E-mail address" required>
+                <input type="text" name="name" placeholder="Enter Your Name" required>
+                <textarea rows="8" name="message"placeholder="Message" required></textarea>
+                <button type="submit" class="blue-btn">Send Email</button>
+            </form>
+        </div>---->
+</div>
+
+</section>
+
+
+
+<section class ="subheaderAbout" id="feed">
+    <h1>TESTIMONIALS</h1>
+</section>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="trialsStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+<div class="testimonials-section">
+    <section>
+
+        <div class="container">
+            <header>
+                <h1>FEED BACK</h1>
+                <p>
+                    Here’s what our members have to say about their experience at MuscleControl Gym
+                </p>
+            </header>
+
+
+
+        <div class="testimonials-carousel-wrap">
+            <div class="testimonials-carousel">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- Testimonial slides (add additional slides here as needed) -->
+                         
+                        <div class="swiper-slide">
+                            <div class="testi-item">
+                                <div class="testi-avatar"><img src="GYMs/mara.jpg"></div>
+                                <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                                <div class="testimonials-text">
+                                    <div class="listing-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p>MuscleControl Gym has completely transformed my fitness routine. The equipment is top-notch, and the trainers are incredibly knowledgeable and motivating. I’ve seen amazing results in just a few months!
+                                        <div class="testimonials-avatar">
+                                        <h3>Mara</h3>
+                                        <h4>Cutsomer</h4>
+                                    </div>
+                                </div>
+                                <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div> 
+                            </div>
+                        </div>
+
+                        <!--2nd-->
+
+                        <div class="swiper-slide">
+                            <div class="testi-item">
+                                <div class="testi-avatar"><img src="GYMs/Yuri.png"></div>
+                                <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                                <div class="testimonials-text">
+                                    <div class="listing-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p>I love the atmosphere at MuscleControl Gym! It’s always clean, well-organized, and full of friendly people. The workout guides helped me achieve my goals faster than I ever expected.
+                                        <a href="#" class="text-link"></a>
+                                    <div class="testimonials-avatar">
+                                        <h3>Yuri</h3>
+                                        <h4>Customer</h4>
+                                    </div>
+                                </div>
+                                <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div> 
+                            </div>
+                        </div>
+
+
+                        <!--3rd-->
+
+                        <div class="swiper-slide">
+                            <div class="testi-item">
+                                <div class="testi-avatar"><img src="GYMs/mikha.jpg"></div>
+                                <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                                <div class="testimonials-text">
+                                    <div class="listing-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p>The staff at MuscleControl Gym really cares about your progress. They are always there to offer guidance and encouragement, making every workout session enjoyable. I’ve never felt more confident and strong!
+                                        <a href="#" class="text-link"></a>
+                                    <div class="testimonials-avatar">
+                                        <h3>Mikha</h3>
+                                        <h4>Customer</h4>
+                                    </div>
+                                </div>
+                                <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div> 
+                            </div>
+                        </div>
+
+                        <!--4th-->
+
+                        <div class="swiper-slide">
+                            <div class="testi-item">
+                                <div class="testi-avatar"><img src="GYMs/jho.jpg"></div>
+                                <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                                <div class="testimonials-text">
+                                    <div class="listing-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p>MuscleControl Gym has a wide range of equipment that keeps my workouts challenging and exciting. The trainers are always pushing me to improve, and the atmosphere is incredibly motivating. It’s the best place to reach your fitness goals!
+                                        <a href="#" class="text-link"></a>
+                                    <div class="testimonials-avatar">
+                                        <h3>Jhoanna</h3>
+                                        <h4>Customer</h4>
+                                    </div>
+                                </div>
+                                <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div> 
+                            </div>
+                        </div>
+
+                        <!--5th-->
+
+                        <div class="swiper-slide">
+                            <div class="testi-item">
+                                <div class="testi-avatar"><img src="GYMs/Jaeson.jpg"></div>
+                                <div class="testimonials-text-before"><i class="fa fa-quote-right"></i></div>
+                                <div class="testimonials-text">
+                                    <div class="listing-rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                    <p>What I love about MuscleControl Gym is the sense of community. Everyone supports each other, and the trainers are always available to help you improve. It's the best gym experience I’ve ever had!
+                                        <a href="#" class="text-link"></a>
+                                    <div class="testimonials-avatar">
+                                        <h3>Jaeson</h3>
+                                        <h4>Customer</h4>
+                                    </div>
+                                </div>
+                                <div class="testimonials-text-after"><i class="fa fa-quote-left"></i></div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tc-pagination"></div>
+        </div>
+    </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+<!-----------------Download App--------------->
+
+<section class="cta" id="APK">
+    <h1>
+        Download our application
+    </h1>
+    <a href=" " class="hero-btn">Download App</a>
+
+</section>
+
+
+
+<!---------------FOOTER------------------>
+
+<section class="footer">
+    <h4>
+        ABOUT US
+    </h4>
+    <p>
+        Join MuscleControl Gym and unlock your full potential in a welcoming community 
+        <br>dedicated to strength, confidence, and growth.
+    </p>
+</section>
+
+<!------------icons-------------------->
+<section>
+    <div class="icons">
+        <a href="https://www.facebook.com/profile.php?id=61552938059667&mibextid=ZbWKwL">
+        <i class="fa-brands fa-facebook"></i></a>
+        <a href="https://x.com/">
+        <i class="fa-brands fa-x-twitter"></i></a>  
+        <a href="https://instagram.com/">   
+        <i class="fa-brands fa-instagram"></i></a> 
+        
+</section>
+
+<!-------GO TOP BUTTON--------->
+
+<a class="gotop" href="#"> <i class="fa-solid fa-circle-up"></i> </a>
+
+
+<!------------JavaScript---------------->
+
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+
+</script>
+
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '30px',
+        duration: 1500,
+        delay: 200
+    });
+
+
+
+    ScrollReveal().reveal('.facilitiesIMG-col img', {
+        reset: true,    
+        opacity: 0,     
+        distance: '0px'
+    });
+
+ 
+    ScrollReveal().reveal('.about-col img', {
+        reset: true,    
+        opacity: 0,     
+        distance: '0px'
+    });
+    
+    ScrollReveal().reveal('.location iframe', {
+        reset: true,    
+        opacity: 0,     
+        distance: '0px'
+    });
+
+
+//---------membership----------//
+
+    ScrollReveal().reveal('.offers h1',{delay: 50, origin: 'left'});
+    ScrollReveal().reveal('.offers p ',{delay: 50, origin: 'right'});
+    ScrollReveal().reveal('.offers .row',{delay: 50, origin: 'bottom'});
+    ScrollReveal().reveal('.TextBox a',{delay: 50, origin: 'bottom'});
+
+//---------coach staff---------//
+    ScrollReveal().reveal('.Coach-col',{delay: 50, origin: 'bottom'});
+
+//---------about us---------//
+    ScrollReveal().reveal('.about-col p',{delay: 50, origin: 'top'});
+
+
+//---------facilities----------//
+    ScrollReveal().reveal('.facilities h1, .facilities p',{delay: 50, origin: 'top'});
+    ScrollReveal().reveal('.facilities-col h2',{delay: 50, origin: 'right'});
+
+//---------cta-----------------//    
+    ScrollReveal().reveal('.cta, .ctah1',{delay: 50, origin: 'bottom'});
+    ScrollReveal().reveal('.cta a',{delay: 50, origin: 'right'});
+
+//---------FOOTER--------------//
+    ScrollReveal().reveal('.footer',{delay: 50, origin: 'bottom'});
+    ScrollReveal().reveal('.icons',{delay: 50, origin: 'right'});
+
+
+
+
+</script>
+
+</body>
+</html>

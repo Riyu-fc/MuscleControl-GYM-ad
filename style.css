@@ -1,0 +1,1262 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: HeaderFont;
+    src: url(Font/ethnocentricrg.otf) ;
+}
+
+
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 1000; 
+}
+
+.nav-links ul {
+    list-style-type: none;
+    padding: 0;
+    transition: .3s;
+}
+
+.nav-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+}
+
+.nav-links a.active {
+    font-weight: bold;
+
+}
+
+.section {
+    height: 100vh; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 60px; 
+}
+
+.nav-links ul li a {
+    transition: .3s;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.nav-links ul li.active a {
+    color: #ffffff; 
+    transform: scale(1.01);
+}
+
+
+
+.carousel{
+    position: relative; 
+    height: 100vh; 
+}
+
+.carousel::before {
+    z-index: 77; 
+    content: '';
+    position: absolute;  
+    background-image: linear-gradient(rgba(0, 6, 29, 0.7), 
+    rgba(0, 8, 39, 0.7)); 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+
+.carousel img{              /*-------------CAROUSEL----------------*/
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.carousel {
+position: relative; 
+width: 100%; 
+
+}
+
+.slider-nav{
+    z-index:100;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 12px;
+}
+
+.slider-nav .nav-btn{
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(255, 255 ,255 ,0.5);
+    transition: 0.3s ease;
+    z-index: 100;
+    margin-top: 700px;
+    }
+
+.slider-nav .nav-btn:not(:last-child){
+    margin-right: 20px;
+}
+
+.slider-nav .nav-btn:hover{
+    transform: scale(1.3);
+}
+
+.slider-nav .nav-btn.active{
+    background: #317AC7;
+}
+
+.pic-slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0; 
+    transition: opacity 1.5s ease, transform 1.5s ease; 
+}
+
+.pic-slide.active {
+    opacity: 1; 
+    transform: translateX(0); 
+}
+
+.pic-slide:not(.active) {
+    transform: translateX(5px); 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;          
+    width: 90%;     
+    background-color: transparent; 
+    z-index: 1000;
+    padding: 10px 100px;
+    background: transparent; 
+    transition: padding 0.5s ease, background-color 0.5s ease;
+    
+}
+
+nav.sticky {
+    align-items: center;
+    padding-top: .1px;
+    background: #001933; 
+    z-index: 1000000000;
+}
+nav img {
+    margin-top: 10px;
+    width: 200px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 4px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #317AC7;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 80%;
+
+}
+
+.nav-links ul li.active a {
+    color: #317AC7;
+    font-weight: bold;
+}
+
+.TextBox.active {
+    display: block;
+}
+
+.TextBox h1 {
+    font-family: 'HeaderFont';
+    font-size: 62px;
+}
+
+.TextBox {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding-top: 145px;
+    max-width: 80%;
+    z-index: 100;
+    display: none;
+}
+
+.TextBox p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+
+
+
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.hero-btn:hover {
+    border: 1px solid #005485;
+    background: #005485;
+    transition: 1s;
+}
+
+nav .fa {
+    display: none;
+}
+
+@media (max-width: 700px) {
+
+    .TextBox{
+        padding-top: 45px;
+    }
+    
+    .TextBox h1 {
+        font-size: 30px;
+    }
+
+    .TextBox p{
+        text-align: center;
+
+    }
+
+    nav {
+        display: flex;
+        
+        align-items: center;
+        padding: 20px;
+    }
+
+    .nav-links ul li {
+        display: block; /* Stack the links vertically */
+        padding: 10px 0; /* Space out the links */
+        text-align: left;
+    }
+    .nav-links {
+        position: fixed;
+        background: #12213e;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 20000;
+        transition: 0.5s;
+    }
+
+    .nav-links ul li::after {
+        display: none;
+    }
+
+    nav .fa {
+        display: block;
+        color: #fff;
+
+        font-size: 22px;
+        cursor: pointer;
+    }
+    
+    .nav-links ul {
+        padding-top: 20px;
+    }
+    .nav-links ul li.active a {
+        color: #00b7ff;
+        font-weight: bold;
+        align-items: left;
+        }
+    
+    
+
+    .nav img{
+
+        width: 80%;
+        justify-content: flex-start;    
+        }
+    .nav {
+        padding-top: 10px;
+    }
+    
+    .fa-times{
+        padding:20px;
+    }
+    .slider-nav .nav-btn{
+        margin-top: 525px;
+    }
+}
+
+
+/*-------------About section----------------*/
+
+html, body{
+    overflow-x: hidden;
+    
+    }
+    .subheaderAbout{
+    height: 20vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 8, 39, 0.7), 
+    rgba(0, 8, 39, 0.7)), url(GYMs/about.JPG);
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 5%;
+    
+    }
+    
+    .subheaderAbout h1{
+    margin-top: 80px;
+    text-align: center;
+    color: #fff;
+    font-family: 'HeaderFont';
+    font-size: 35px;
+    padding: 115px;
+    }
+    
+    html, body {
+        overflow-x: hidden;
+    }
+    
+    .subheaderAbout {
+        height: 20vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(0, 8, 39, 0.7), 
+        rgba(0, 8, 39, 0.7)), url(GYMs/about.JPG);
+        background-position: center;
+        background-size: cover;
+        padding-bottom: 5%;
+    }
+    
+    .subheaderAbout h1 {
+        margin-top: 80px;
+        text-align: center;
+        color: #fff;
+        font-family: 'HeaderFont';
+        font-size: 35px;
+        padding: 115px;
+    }
+    
+    .AboutUs {
+        width: 80%;
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .about-col {
+        flex-basis: 48%;
+        padding: 30px 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;  /* This centers the items horizontally */
+    }
+    
+    .about-col h1 {
+        padding: 0;
+        text-align: left;
+    }
+    
+    .about-col img {
+        width: 70%;
+        margin-bottom: 20px;  /* Adds some space below the image */
+    }
+    
+    .about-col p {
+        width: 100%;
+        padding: 15px 0 25px;
+        text-align: justify;
+        margin-top: 0;  /* Removes default margin above the paragraph */
+    }
+    
+
+    @media (max-width: 700px) {
+        .subheaderAbout h1{
+        font-size: 20px;
+        padding-top: 80px;
+    }
+
+    .about-col h1{
+        font-size: 18px;
+    }
+
+    .about-col img {
+        width: 90%;
+        display: block;
+        padding-top: 0;
+     }
+
+    .about-col p {
+        width: 100%;
+        font-size: 10px;
+        text-align: justify;
+        padding-bottom: 0;
+        white-space: pre-wrap;
+    }
+    
+}
+
+
+/*-----RATES-------*/
+
+.container h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container header p {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.Rates {
+    margin-top: 10px;
+    padding: 20px;
+    width: 80%;
+    margin: .1px auto;
+}
+
+.pricing-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 1%;
+}
+
+.rates-col {
+    width: 22%; 
+    border-radius: 10px; 
+    text-align: center;
+    overflow: hidden; 
+    margin: 0; 
+    box-sizing: border-box; 
+    transition: 0.5s; 
+    border: 2px solid transparent;
+}
+
+.Rates .top-section {
+    background-color: #12213e; 
+    padding: 20px;
+    color: white;
+    border-radius: 10px 10px 0 0; 
+}
+
+.Rates .top-section p {
+    color: #317AC7;
+    text-align: center;
+}
+
+.Rates .bottom-section {
+    background-color: #f3f3f3; 
+    padding: 20px; 
+    color: black;
+    height: 350px; 
+    border-radius: 0 0 10px 10px; 
+}
+
+.Rates h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.Rates .price {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.Rates p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.Rates .bottom-section ul {
+    list-style-type: disc; 
+    padding-left: 20px; 
+    margin: 0; 
+}
+
+.Rates .bottom-section li {
+    font-size: 16px; 
+    margin-bottom: 10px; 
+    text-align: left;
+    margin-left: 10px;
+}
+
+.rates-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
+    border: 2px solid #00b7ff;
+}
+@media (max-width: 700px) {
+    .pricing-section {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center the columns */
+    }
+
+    .rates-col {
+        width: 90%; /* Make each column take full width */
+        margin-bottom: 20px; /* Add some space between columns */
+    }
+
+    .Rates h2 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .Rates .price {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .Rates p {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .Rates .bottom-section {
+        height: auto; /* Allow height to adjust based on content */
+    }
+}
+
+
+
+
+/*-------------- Offers Section-------------- */
+
+.offers {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 70px;
+}
+
+
+.offers p {
+    color: black;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.offers-col p{
+    color: white;
+}
+
+.offers-col {
+    flex-basis: 30%;
+    background: #12213e;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    
+}
+
+.offers-col h3 {
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+    color: white;
+}
+
+.offers-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+@media (max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+
+
+/* -------------Coaches Section --------------*/
+
+
+.Coach{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.Coach-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+
+.Coach-col img{
+    width: 100%;
+    display: block;
+}
+
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+
+.layer:hover{
+    background: rgba(0, 8, 39, 0.7);
+
+    
+
+}
+
+
+
+.layer h3{   /*-----Instructors name -------*/
+    width: 100%;
+    font-weight: 300;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position:absolute;
+    opacity: 0;
+    transition: 0.5s;
+    font-family: 'HeaderFont';
+
+}
+
+.layer:hover h3 {  /*-----Instructors name -------*/
+    bottom: 92%;
+    opacity: 1;
+}
+
+.layer h4{  /*-----Instructors Type of Coach -------*/         
+
+    width: 100%;
+    font-weight: 100;
+    color: #00b7ff;
+    font-size: 23px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position:absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer:hover h4{ /*-----Instructors Type of Coach -------*/
+    bottom: 83%;
+    opacity: 1;
+}
+
+.layer p{   /*-----Instructors Description -------*/
+    width: 80%;
+    font-weight: 300;
+    color: #fff;
+    font-size: 19px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position:absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer:hover p{ /*-----Instructors Description -------*/
+    bottom: 75%;
+    opacity: 1;
+}
+
+
+.layer h5{   /*-----Instructors ACHIVEMENT -------*/
+
+    width: 100%;
+    font-weight: 100;
+    color: #00b7ff;
+    font-size: 20px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position:absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.layer:hover h5{ /*-----Instructors ACHIEVEMENT -------*/
+    bottom: 68%;
+    opacity: 1;
+}
+
+
+.layer h6{  /*-----Instructors ACHIEVEMENTS LIST  -------*/
+
+    width: 100%;
+    font-weight: 100;
+    color: #fff;
+    font-size: 19px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position:absolute;
+    opacity: 0;
+    transition: 0.5s;
+    text-align: left;
+    padding-left: 20%;
+}
+
+.layer:hover h6{    /*-----Instructors ACHIEVEMENTS LIST  -------*/
+    bottom: 20%;
+    opacity: 1;
+
+}
+
+
+@media (max-width: 700px){
+
+
+    .layer h4{          /*-----Instructors Type of Coach -------*/
+        font-size: 18px;
+    }
+
+    .layer h3{
+        font-size: 20px;
+    }
+
+
+    .layer p{           /*-----Instructors Description -------*/
+        font-size: 16px;
+        width: 90%;
+
+    }
+    .layer:hover p{     /*-----Instructors Description -------*/
+        bottom: 72%;
+        opacity: 1;
+
+    }
+
+    .layer h5{          /*-----Instructors ACHIEVEMENT -------*/
+        font-size: 18px;
+    }
+
+    .layer:hover h5{    /*-----Instructors ACHIEVEMENT -------*/
+        bottom: 63%;
+        opacity: 1;
+    }
+
+    .layer h6{          /*-----Instructors ACHIEVEMENTS LIST  -------*/
+        white-space: pre-line;
+        font-size: 14.5px;
+        width: 90%;
+        padding: 0;
+
+    }
+
+    .layer:hover h6{    /*-----Instructors ACHIEVEMENTS LIST  -------*/
+        bottom: 2%
+    }
+
+}
+
+
+
+/* ----------------Facilities Section -------------------- */
+
+.facilities {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.facilities h1 {
+    margin-top: 30px;
+    margin-bottom: 0px;  
+}
+
+.facilities p {
+    text-align: center; 
+    margin-top: 5px;  
+    margin-bottom: 10px;
+}
+
+
+
+
+/*--------------FACILITIES--------------*/
+
+
+.card-link h2{
+    font-size: 1px;
+}
+
+.card-wrapper {
+    max-width: 85%;
+    margin: 0 auto 35px; /* Changed to 'auto' for left and right */
+    padding: 20px 10px;
+    overflow: hidden;
+    align-items: center; /* This is generally used with flexbox */
+}
+
+.card-list .card-item {
+    list-style: none;
+}
+
+.card-list .card-item .card-link {
+    user-select: none; 
+    display: block;
+    background: #f3f3f3;
+    padding: 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 1s ease; /* Transition for the scale effect */
+}
+
+.card-list .card-link:hover {
+    transform: scale(1.02); /* Scale effect on hover */
+    border: 2px solid #00b7ff;
+}
+
+.card-list .card-link .card-image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-list .card-link .badge {
+    color: #fff;
+    padding: 8px 16px;
+    font-size: .95rem;
+    font-weight: 500;
+    margin: 16px 0 18px;
+    background: #12213e;
+    width: fit-content;
+    border-radius: 50px;
+}
+
+.card-list .card-link .card-title {
+    font-size: 18px;
+    color: black;
+    font-weight: 200;
+    text-align: justify;
+}
+
+
+
+.card-wrapper .swiper-pagination-bullet {
+    height: 13px;
+    width: 13px;
+    opacity: 0.5;
+    background: #12213e;
+}
+
+.card-wrapper .swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.card-wrapper .swiper-slide-button{
+    color: #00b7ffff;
+}
+
+
+
+
+
+@media (max-width: 700px){
+
+.facilities p{
+    margin-bottom: 50px;
+}
+.facilitiesIMG-col img, .facilities-col  {
+    width: 100%;
+    height: 224px;
+}
+.card-list .card-link .card-title {
+    font-size: 13px;
+}
+
+.card-wrapper .swiper-slide-button{
+    display: none;
+}
+
+.facilities h2{
+    margin-top: 20px;
+}
+
+.facilities-col p {
+    text-align: justify;
+}
+}
+
+
+
+/* -----------------Contact Us Section -------------------*/
+.cta {
+    margin: 10px auto;
+    width: 70%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,8,39,0.7),
+     rgba(0,8,39,0.7)), url(GYMs/Pic2.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}    
+
+.cta h1{
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+.cta img{
+    height: 100%;
+}
+
+
+
+
+@media (max-width: 700px) {
+
+    .cta{
+        width: 75%;                                                     
+    }
+
+    .cta h1{
+            font-size: 13px;   
+    }
+    
+}
+
+/*------------------FOOTER---------------------*/
+
+
+.footer {
+    max-width: 1200px; 
+    width: 100%;
+    margin: 0 auto; 
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer h4 {
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+
+.footer p{
+    text-align: center;
+    color: #000000;
+    font-weight: 50;
+    font-size: 13px;
+
+}
+
+.icons {
+    text-align: center; 
+    padding: 10px 0; 
+}
+
+.icons i {
+    color: #005485;
+    margin: 0 10px; 
+    cursor: pointer;
+    font-size: 17px; 
+}
+
+
+.gotop {
+    position: fixed;
+    color: #12213e;
+    bottom: 40px;
+    right: 50px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 25px;
+    transition: transform 0.5s; /* Adds a smooth transition */
+}
+
+.gotop:hover {
+    transform: scale(1.2); /* Scales up on hover */
+}
+
+
+
+@media (max-width: 700px) {
+    br{
+        display: none;
+    }
+    .footer p {
+        font-size: 8px;
+        text-align: center;
+    }
+
+    .gotop {
+        right: 15px;
+        }
+}
+
+
+
+
+/*------------------MEMBERSHIP PAGE --------------------*/
+
+.subheaderMembership{
+height: 20vh;
+width: 100%;
+background-image: linear-gradient(rgba(0, 8, 39, 0.7), 
+rgba(0, 8, 39, 0.7)), url(GYMs/Membership.jpg);
+background-position: center;
+background-size: cover;
+padding-bottom: 5%;
+
+}
+.subheaderMembership h1{
+margin-top: 80px;
+text-align: center;
+color: #fff;
+font-family: 'HeaderFont';
+font-size: 35px;
+padding-top: 120px;
+
+
+}
+
+@media (max-width: 700px) {
+
+    .subheaderMembership h1{
+    font-size: 20px;
+    text-align: center;
+    padding-top: 80px;
+    }
+
+}
+
+
+
+/*-----------------------contact page ------------------*/
+
+.subheaderContact{
+height: 20vh;
+width: 100%;
+background-image: linear-gradient(rgba(0, 8, 39, 0.7), 
+rgba(0, 8, 39, 0.7)), url(GYMs/counter.jpg);
+background-position: center;
+background-size: 100%;
+padding-bottom: 5%;
+
+}
+.subheaderContact h1{
+margin-top: 100px;
+text-align: center;
+padding-top: 120px;
+color: #fff;
+font-family: 'HeaderFont';
+font-size: 35px;
+}
+
+.location{
+width: 80%;
+margin: auto;
+padding: 80px;
+}
+
+.location iframe {
+    width: 100%;
+    max-width: 100%; /* Ensures the iframe does not exceed the container width */
+
+}
+
+.ContactUs {
+width: 80%;
+margin: auto;
+
+}
+
+
+
+.contact-col {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%; /* Adjust as needed for your layout */
+    padding-left: 120px;
+}
+
+.contact-col div {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-col i {
+font-size: 28px; 
+color: #005485; 
+margin-right: 15px; 
+}
+
+.contact-col h5 {
+font-size: 16px; 
+margin: 0; 
+}
+
+.contact-col input, .contact-col textarea{
+width: 100%;
+padding: 15px;
+margin-bottom: 17px;
+outline:none;
+border: 1px solid #005485;
+box-sizing: border-box;
+}
+
+
+.blue-btn {
+display: inline-block;
+text-decoration: none;
+color: #005485;
+border: 1px solid #005485;
+padding: 12px 34px;
+font-size: 13px;
+background: transparent;
+position: relative;
+cursor: pointer;
+}
+
+.blue-btn:hover {
+border: 1px solid #005485;
+background: #005485;
+color: #fff;
+transition: .5s;
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* Centers the .contact-col horizontally */
+}
+
+@media (max-width: 700px){
+
+    .subheaderContact h1{
+    font-size: 26px;
+    padding-top: 80px;
+    }
+
+    .row {
+        justify-content: left;
+    }
+
+    .contact-col{
+        padding-left: 0;
+        padding-top: 20px;
+        
+    }
+
+    .contact-col h5 {
+        font-size: 12px; 
+        padding-bottom: 20px;
+        font-weight: 600;
+        padding-right: 20px;
+        }
+
+    .contact-col i{
+        font-size: 15px;
+        padding-bottom: 20px;
+    }
+
+    .location {
+        padding: 20px; 
+    }
+
+    .location iframe {
+        width: 100%;
+        height: 300px; 
+    }
+
+    .footer p{
+        width: 80%;
+        margin: auto;
+        padding: 0;
+    }
+
+
+}
+
+
+

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MuscleControlGym</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=
+Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-
+awesome/6.6.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+
+<script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+<body>
+<section class ="subheaderMembership">
+    <nav>
+        <a href="index.html"><img src="GYMs/logoclose.png"></a>
+        <div class=" nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+             <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="About.html">ABOUT</a></li>
+                <li class="active"><a href="Membership.html">MEMBERSHIP</a></li>
+                <li><a href="Contact.html">CONTACT</a></li>
+             </ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>Membership</h1>
+
+
+</section>
+
+<!----Membership Contents---->
+
+<section class = "offers">
+    <h1>
+        MEMBERSHIP OFFERS
+    </h1>
+    <p>
+        Unlock unlimited access to top-notch facilities and personalized training 
+        with our exclusive membership—achieve your fitness goals and enjoy a healthier,
+         stronger you!
+    </p>
+
+    <div class="row">
+        <div class="offers-col">
+            <h3>TRIALS</h3>
+            <p>This is a trial offer to let potential members experience 
+                the service before committing.</p>
+        </div>
+        <div class="offers-col">
+            <h3>FREE COACHING</h3>
+            <p> Enjoy two days of complimentary coaching as a welcome 
+                bonus to help new members get started.</p>
+        </div>
+        <div class="offers-col">
+            <h3>Consultaion</h3>
+            <p> This is a consultation offer allows beginners to get 
+                personalized guidance on fitness goals and nutrition.</p>
+        </div>
+    </div>
+</section>
+
+<!------FACILITIES ------>
+
+<section class="facilities">
+    <h1>FACILITIES</h1>
+    <p>Elevate your fitness with top-quality gym 
+        equipment and state-of-the-art facilities—where 
+        excellence meets your workout!
+    </p>
+
+    <div class="row" >
+        <div class="facility" >
+            <div class="facilitiesIMG-col">
+                <img src="GYMs/11 (1).png">
+            </div>
+            <div class="facilities-col">
+                <h2>DUMBBELLS</h2>
+                <p>Our selection of dumbbells offers various weights to 
+                   help you build strength and muscle. They are perfect 
+                   for both beginners and experienced lifters looking to 
+                   reach their fitness goals.</p>
+            </div>
+        </div>
+        <div class="facility">
+            <div class="facilitiesIMG-col">
+                <img src="GYMs/11 (2).png">
+            </div>
+            <div class="facilities-col">
+                <h2>MACHINES</h2>
+                <p> Our advanced gym machines are designed for a variety 
+                    of exercises, targeting every muscle group. They ensure 
+                    safe and effective workouts for cardio and strength training.</p>
+            </div>
+        </div>
+        <div class="facility">
+            <div class="facilitiesIMG-col">
+                <img src="GYMs/equipment.png" >
+            </div>
+            <div class="facilities-col">
+                <h2>EQUIPMENTS</h2>
+                <p>We provide a wide range of gym equipment, including kettlebells 
+                    and resistance bands, to support all workout routines. Train 
+                    confidently with high-quality gear that aids your fitness journey.
+                    
+                </p>
+            </div>
+        </div>
+    
+</section>
+
+
+
+
+
+<!---FOOTER-->
+
+<section class="footer">
+    <h4>
+        ABOUT US
+    </h4>
+    <p>
+        Per quietum iter per nebula, luminary 
+        admiratus est cascade stellarum,
+        unaquaeque resonans <br>harmoniam quasi ad summum 
+        pervenientes suae cosmicum aventurae
+    </p>
+
+
+</section>
+<section>
+    <div class="icons">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-x-twitter"></i>        
+        <i class="fa-brands fa-instagram"></i>
+
+
+</section>
+
+
+
+
+<!-----JavaScript----->
+
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+
+</script>
+
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '20px',
+        duration: 1500,
+        delay: 300
+    });
+
+    ScrollReveal().reveal('.subheaderMembership img', {
+        reset: true,    
+        opacity: 0,     
+        distance: '0px'
+    });
+
+    ScrollReveal().reveal('.facilitiesIMG-col img', {
+        reset: true,    
+        opacity: 0,     
+        distance: '0px'
+    });
+//---------Welcome Page--------//
+
+    ScrollReveal().reveal('.nav-links',{delay: 50, origin: 'top'});
+    ScrollReveal().reveal('.subheaderMembership h1',{delay: 50, origin: 'bottom'});
+
+//---------membership----------//
+
+    ScrollReveal().reveal('.offers h1',{delay: 50, origin: 'left'});
+    ScrollReveal().reveal('.offers p ',{delay: 50, origin: 'right'});
+    ScrollReveal().reveal('.offers .row',{delay: 50, origin: 'bottom'});
+
+//---------facilities----------//
+//---------facilities----------//
+ScrollReveal().reveal('.facilities h1, .facilities p',{delay: 50, origin: 'top'});
+ScrollReveal().reveal('.facilities-col h2',{delay: 50, origin: 'right'});
+
+//---------FOOTER--------------//
+ScrollReveal().reveal('.footer',{delay: 50, origin: 'bottom'});
+    ScrollReveal().reveal('.icons',{delay: 50, origin: 'right'});
+</script>
+</body>
+</html>

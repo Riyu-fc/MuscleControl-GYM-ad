@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MuscleControlGym</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=
+Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+
+<script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+<body>
+<section class ="subheaderContact">
+    <nav>
+        <a href="index.html"><img src="GYMs/logoclose.png"></a>
+        <div class=" nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+             <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="About.html">ABOUT</a></li>
+                <li><a href="Membership.html">MEMBERSHIP</a></li>
+                <li class="active"><a href="Contact.html">CONTACT</a></li>
+             </ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>Contact Us</h1>
+
+
+</section>
+
+<!----CONTACT---->
+<section class="location">
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.
+    179717460374!2d121.1313537146782!3d14.24273622594624!2m3!1f0!2f0!3f0!3m2!
+    1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd63e34532f225%3A0x7f95f9114a0c2a93!2s
+    MuscleControl%20Gym!5e0!3m2!1sen!2sph!4v1725344913246!5m2!1sen!2sph" 
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+
+<section class="ContactUs">
+    <div class="row">
+        <div class="contact-col">
+            <div>
+                <i class="fa-solid fa-house"></i>
+                <span>
+                    <h5>
+                        No. 22, Divimall, GBRDI Building,<br>
+                        Parking Lot, Cabuyao, 4025 Laguna
+                    </h5>
+                </span>
+            </div>
+            <div>
+                <i class="fa-solid fa-phone"></i>
+                <span>
+                    <h5>
+                        09493989748
+                    </h5>
+                </span>
+            </div>
+            <div>
+                <i class="fa-solid fa-envelope"></i>
+                <span>
+                    <h5>
+                        MuscleControlGym@gmail.com
+                    </h5>
+                </span>
+            </div>
+        </div>
+        <div class="contact-col">
+            <form action="Form-Handler.php" methos="post" id="email">
+                <input type="text" name="name" placeholder="Enter Your Name" required>
+                <input type="email" name="email"placeholder="Enter Your E-mail address" required>
+                <input type="text" name="subject"placeholder="Enter Your Subject" required>
+                <textarea rows="8" name="message"placeholder="Message" required></textarea>
+                <button type="submit" class="blue-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<!---FOOTER-->
+
+<section class="footer">
+    <h4>
+        ABOUT US
+    </h4>
+    <p>
+        Per quietum iter per nebula, luminary 
+        admiratus est cascade stellarum,
+        unaquaeque resonans <br>harmoniam quasi ad summum 
+        pervenientes suae cosmicum aventurae
+    </p>
+
+
+</section>
+<section>
+    <div class="icons">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-x-twitter"></i>        
+        <i class="fa-brands fa-instagram"></i>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-----JavaScript----->
+
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+
+
+<script>
+    ScrollReveal({
+        reset: true,
+        distance: '10px',
+        duration: 1500,
+        delay: 300
+    });
+
+    ScrollReveal().reveal('.subheaderContact img', {
+        reset: true,    
+        opacity: 0,     
+        distance: '0px'
+    });
+
+    ScrollReveal().reveal('.nav-links',{delay: 50, origin: 'top'});
+    ScrollReveal().reveal('.subheaderContact h1',{delay: 50, origin: 'bottom'});
+    ScrollReveal().reveal('.location',{delay: 50, origin: 'bottom'});
+
+    ScrollReveal().reveal('.contact-col i, .contact-col h5',{delay: 50, origin: 'left'});
+
+    ScrollReveal().reveal('.contact-col',{delay: 50, origin: 'right'});
+
+    //---------FOOTER--------------//
+    ScrollReveal().reveal('.footer',{delay: 50, origin: 'bottom'});
+    ScrollReveal().reveal('.icons',{delay: 50, origin: 'right'});
+
+</script>
+</body>
+</html>
