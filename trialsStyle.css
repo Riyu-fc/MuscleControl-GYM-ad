@@ -3,7 +3,6 @@
 	width: 80%;
 	position: relative;
 	padding: 30px 0;
-    padding-top: 20px;
 	background: #fcfcfd;
 	z-index: 1;
 	display: block; /* Changed from float to block */
@@ -142,6 +141,14 @@
 
 .listing-rating i {
 	color: #007aff;
+}
+
+@media (max-width: 700px){
+    .testimonials-text .listing-rating{
+        font-size: 15px;
+        margin-left: 0;
+        padding-left: 106px;
+    }
 }
 
 .testimonials-avatar h3 {
