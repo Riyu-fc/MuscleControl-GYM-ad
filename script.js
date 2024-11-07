@@ -1,11 +1,11 @@
 window.addEventListener('scroll', () => {
     const sections = [
-        { id: 'homee' },
-        { id: 'AboutUs' },
-        { id: 'subscription' },
-        { id: 'ContactUs' },
-        { id:'feed'},
-        { id: 'APK' }
+        { id: 'Home' },
+        { id: 'About' },
+        { id: 'Subscription' },
+        { id: 'Contact' },
+        { id: 'Testimonial'},
+        { id: 'Download_App' },
     ];
 
     const navLinks = document.querySelectorAll('.nav-links ul li a'); 
